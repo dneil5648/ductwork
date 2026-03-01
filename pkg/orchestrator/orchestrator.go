@@ -6,13 +6,13 @@ import (
 	"log/slog"
 	"time"
 
-	"ductwork/pkg/agent"
-	"ductwork/pkg/config"
-	"ductwork/pkg/dependencies"
-	"ductwork/pkg/history"
-	"ductwork/pkg/logging"
-	"ductwork/pkg/security"
-	task "ductwork/pkg/tasks"
+	"github.com/dneil5648/ductwork/pkg/agent"
+	"github.com/dneil5648/ductwork/pkg/config"
+	"github.com/dneil5648/ductwork/pkg/dependencies"
+	"github.com/dneil5648/ductwork/pkg/history"
+	"github.com/dneil5648/ductwork/pkg/logging"
+	"github.com/dneil5648/ductwork/pkg/security"
+	task "github.com/dneil5648/ductwork/pkg/tasks"
 )
 
 // Orchestrator owns the task channel and spawns agents to execute tasks.

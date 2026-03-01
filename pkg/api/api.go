@@ -9,11 +9,11 @@ import (
 	"path/filepath"
 	"strings"
 
-	"ductwork/pkg/config"
-	"ductwork/pkg/history"
-	"ductwork/pkg/orchestrator"
-	"ductwork/pkg/scheduler"
-	task "ductwork/pkg/tasks"
+	"github.com/dneil5648/ductwork/pkg/config"
+	"github.com/dneil5648/ductwork/pkg/history"
+	"github.com/dneil5648/ductwork/pkg/orchestrator"
+	"github.com/dneil5648/ductwork/pkg/scheduler"
+	task "github.com/dneil5648/ductwork/pkg/tasks"
 )
 
 // API holds references to the orchestrator and scheduler so handlers can

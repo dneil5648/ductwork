@@ -1,4 +1,4 @@
-module ductwork
+module github.com/dneil5648/ductwork
 
 go 1.23.6
 

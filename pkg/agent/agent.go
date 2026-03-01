@@ -10,10 +10,10 @@ import (
 	"path/filepath"
 	"time"
 
-	"ductwork/pkg/logging"
-	"ductwork/pkg/security"
-	"ductwork/pkg/taskbuilder"
-	task "ductwork/pkg/tasks"
+	"github.com/dneil5648/ductwork/pkg/logging"
+	"github.com/dneil5648/ductwork/pkg/security"
+	"github.com/dneil5648/ductwork/pkg/taskbuilder"
+	task "github.com/dneil5648/ductwork/pkg/tasks"
 	"github.com/anthropics/anthropic-sdk-go"
 )
 

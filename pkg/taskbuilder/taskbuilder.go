@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 	"regexp"
 
-	task "ductwork/pkg/tasks"
+	task "github.com/dneil5648/ductwork/pkg/tasks"
 )
 
 // namePattern enforces lowercase kebab-case task names (e.g. "health-check", "deploy-prod")

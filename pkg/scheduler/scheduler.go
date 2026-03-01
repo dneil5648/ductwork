@@ -8,7 +8,7 @@ import (
 	"sync"
 	"time"
 
-	task "ductwork/pkg/tasks"
+	task "github.com/dneil5648/ductwork/pkg/tasks"
 )
 
 // ScheduledTask wraps a task with its scheduling metadata

@@ -41,44 +41,49 @@ A Go-based platform for running AI agents on schedules with tasks, skills, and p
 - **Orchestrator** — reads from the task channel, spawns an agent goroutine per task. Includes concurrency limits via semaphore and retry with exponential backoff for transient errors.
 - **API** — REST endpoints for triggering tasks, spawning ad-hoc agents, inspecting scheduler state, and viewing run history.
 
-## Quick Start
+## Install
+
+### Option 1: `go install` (recommended)
+
+```bash
+go install github.com/dneil5648/ductwork/cmd/ductwork@latest
+```
+
+This puts the `ductwork` binary in your `$GOPATH/bin` (or `$HOME/go/bin`). Make sure that's in your `$PATH`.
+
+### Option 2: Build from source
+
+```bash
+git clone https://github.com/dneil5648/ductwork.git
+cd ductwork
+go build -o ductwork ./cmd/ductwork
+```
 
 ### Prerequisites
 
 - Go 1.23+
 - An [Anthropic API key](https://console.anthropic.com/)
 
-### Setup
+### Quick Start
 
 ```bash
-# Clone the repo
-git clone https://github.com/yourusername/ductwork.git
-cd ductwork
-
-# Install dependencies
-go mod tidy
-
 # Set your API key
 export ANTHROPIC_API_KEY="sk-ant-..."
 
 # Initialize the .agent/ directory (also auto-created on first run)
-go run cmd/main.go init
-```
+ductwork init
 
-### Run Your First Agent
-
-```bash
 # Ad-hoc task with a raw prompt
-go run cmd/main.go spawn "Create a file called hello.txt with 'hello world' in it"
+ductwork spawn "Create a file called hello.txt with 'hello world' in it"
 
 # Run a defined task
-go run cmd/main.go run hello-world
+ductwork run hello-world
 
 # Build a task from a description
-go run cmd/main.go build "Monitor Bitcoin news every hour"
+ductwork build "Monitor Bitcoin news every hour"
 
 # Start the full system (scheduler + orchestrator + API)
-go run cmd/main.go start
+ductwork start
 ```
 
 ## CLI
@@ -317,7 +322,8 @@ The agent has five tools, defined in `.agent/tools.json`:
 ```
 ductwork/
 ├── cmd/
-│   └── main.go                  # Cobra CLI entry point
+│   └── ductwork/
+│       └── main.go              # Cobra CLI entry point (go install target)
 ├── pkg/
 │   ├── agent/
 │   │   ├── agent.go             # Core agent runtime (Spawn, RunTask, runLoop)
